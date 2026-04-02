@@ -1,0 +1,64 @@
+# Publica o build estático no GitHub Pages (branch gh-pages não é usada: deploy via Actions).
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      # GITHUB_REPOSITORY é injetado pelo GitHub — o Vite usa o slug no `base`.
+      - name: Build
+        run: npm run build
+
+      # Se isso falhar, o Pages pode estar publicando HTML de dev (com /src/main.jsx).
+      - name: Verificar que o HTML usa o bundle (nao src/main.jsx)
+        run: |
+          if grep -qE 'src/main\.jsx|/src/' dist/index.html; then
+            echo "::error::dist/index.html ainda referencia fontes. Rode npm run build localmente e confira."
+            cat dist/index.html
+            exit 1
+          fi
+          echo "OK: index.html aponta para assets empacotados."
+
+      # GitHub Pages não redireciona rotas do SPA; 404.html com o mesmo index permite React Router.
+      - name: SPA fallback (404.html)
+        run: cp dist/index.html dist/404.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
