@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Guia de Arquitetura Frontend",
+    "description": "Boas praticas para estrutura de pastas, componentes e padroes de composicao.",
+    "category": "Guia",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "Repositorio de Design System",
+    "description": "Biblioteca oficial de componentes reutilizaveis e tokens visuais.",
+    "category": "Repositório",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "Padrao de Pull Request",
+    "description": "Template e checklist para revisao de qualidade e governanca tecnica.",
+    "category": "Padrão",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "title": "Ferramenta de Analise de Qualidade",
+    "description": "Dashboard com metricas de cobertura, lint e vulnerabilidades.",
+    "category": "Ferramenta",
+    "link": "#"
+  },
+  {
+    "id": 5,
+    "title": "Guia de Versionamento Semantico",
+    "description": "Definicao de incrementos de versao para releases consistentes.",
+    "category": "Guia",
+    "link": "#"
+  },
+  {
+    "id": 6,
+    "title": "Repositorio de Templates",
+    "description": "Colecao de templates de projetos para acelerar novas iniciativas.",
+    "category": "Repositório",
+    "link": "#"
+  }
+]

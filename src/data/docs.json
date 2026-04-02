@@ -1,0 +1,46 @@
+[
+  {
+    "nome": "Guia de Padroes de Commit",
+    "link": "https://gitlab.com/org/docs/guia-commits",
+    "tipoLink": "gitlab",
+    "descricao": "Define convencoes para mensagens de commit e historico rastreavel.",
+    "responsavel": "Plataforma Frontend",
+    "status": "ativo",
+    "categoria": "Guia",
+    "coautores": ["Time QA", "Arquitetura"],
+    "ultimaAtualizacao": "2026-03-28"
+  },
+  {
+    "nome": "Repositorio Base de Componentes",
+    "link": "https://gitlab.com/org/frontend/design-system",
+    "tipoLink": "gitlab",
+    "descricao": "Centraliza os componentes reutilizaveis do ecossistema web.",
+    "responsavel": "Design System",
+    "status": "ativo",
+    "categoria": "Repositório",
+    "coautores": [],
+    "ultimaAtualizacao": "2026-03-18"
+  },
+  {
+    "nome": "Padrao de Nomenclatura de Branches",
+    "link": "https://gitlab.com/org/docs/padrao-branches",
+    "tipoLink": "gitlab",
+    "descricao": "Padroniza nomes de branches para facilitar automacoes de CI/CD.",
+    "responsavel": "DevOps",
+    "status": "experimental",
+    "categoria": "Padrão",
+    "coautores": ["Seguranca"],
+    "ultimaAtualizacao": "2026-03-31"
+  },
+  {
+    "nome": "Playbook de Ferramentas de Observabilidade",
+    "link": "https://docs.google.com/spreadsheets/d/1A2B3C4D5E6F",
+    "tipoLink": "externo",
+    "descricao": "Mapeia ferramentas e fluxos para monitoramento e alertas de aplicacoes.",
+    "responsavel": "SRE",
+    "status": "legado",
+    "categoria": "Ferramenta",
+    "coautores": [],
+    "ultimaAtualizacao": "2025-12-11"
+  }
+]
