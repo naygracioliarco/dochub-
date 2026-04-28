@@ -29,7 +29,11 @@ jobs:
         run: npm ci
 
       # GITHUB_REPOSITORY é injetado pelo GitHub — o Vite usa o slug no `base`.
+      # Secrets opcionais: mesmo nome em Settings > Secrets > Actions (persistencia compartilhada).
       - name: Build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: npm run build
 
       # Se isso falhar, o Pages pode estar publicando HTML de dev (com /src/main.jsx).

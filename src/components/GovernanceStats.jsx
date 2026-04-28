@@ -17,20 +17,22 @@ export default function GovernanceStats({ docs }) {
 
   return (
     <section className="mb-4 grid gap-3 sm:grid-cols-2">
-      <article className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
-        <p className="inline-flex items-center gap-2 text-sm font-medium text-emerald-700">
+      <article className="rounded-xl border border-emerald-300 bg-emerald-100 p-4 dark:border-emerald-600 dark:bg-emerald-500/15">
+        <p className="inline-flex items-center gap-2 text-sm font-medium text-emerald-900 dark:text-emerald-100">
           <FileCheck2 size={16} />
           Documentos ativos
         </p>
-        <p className="mt-1 text-2xl font-semibold text-emerald-900">{totalAtivos}</p>
+        <p className="mt-1 text-2xl font-semibold text-emerald-950 dark:text-emerald-50">
+          {totalAtivos}
+        </p>
       </article>
 
-      <article className="rounded-xl border border-violet-200 bg-violet-50 p-4">
-        <p className="inline-flex items-center gap-2 text-sm font-medium text-violet-700">
+      <article className="rounded-xl border border-violet-300 bg-violet-100 p-4 dark:border-violet-600 dark:bg-violet-500/15">
+        <p className="inline-flex items-center gap-2 text-sm font-medium text-violet-900 dark:text-violet-100">
           <Sparkles size={16} />
           Melhorias no mes
         </p>
-        <p className="mt-1 text-2xl font-semibold text-violet-900">
+        <p className="mt-1 text-2xl font-semibold text-violet-950 dark:text-violet-50">
           {melhoriasMesAtual}
         </p>
       </article>
